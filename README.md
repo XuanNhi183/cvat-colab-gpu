@@ -1,5 +1,7 @@
 # CVAT local + Colab GPU
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XuanNhi183/cvat-colab-gpu/blob/main/CVAT_Colab_GPU_Repo_Host.ipynb)
+
 Chạy CVAT bằng Docker trên máy cá nhân và dùng GPU Colab để chạy segmentation.
 Notebook có ô nhập repo/checkpoint, **không cố định model**. Mỗi người tự dùng tài khoản
 Colab, ngrok và token riêng. Thư mục này không chứa bộ cài CVAT đầy đủ.
