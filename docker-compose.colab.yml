@@ -1,0 +1,31 @@
+x-colab-env: &colab-env
+  CVAT_SERVERLESS: '1'
+  CVAT_NUCLIO_HOST: colab_bridge
+  CVAT_NUCLIO_PORT: '8070'
+  CVAT_NUCLIO_SCHEME: http
+  CVAT_NUCLIO_INVOKE_METHOD: dashboard
+  CVAT_NUCLIO_DEFAULT_TIMEOUT: '180'
+
+services:
+  colab_bridge:
+    image: python:3.11-slim
+    restart: unless-stopped
+    command: [python, /app/bridge.py]
+    environment:
+      COLAB_URL: ${COLAB_URL:?Set COLAB_URL from the notebook}
+      COLAB_TOKEN: ${COLAB_TOKEN:?Set COLAB_TOKEN from the notebook}
+    volumes:
+      - ./colab-gpu/bridge.py:/app/bridge.py:ro
+    networks:
+      - cvat
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8070/healthz', timeout=10)"]
+      interval: 30s
+      timeout: 12s
+      retries: 3
+
+  cvat_server:
+    environment: *colab-env
+
+  cvat_worker_annotation:
+    environment: *colab-env

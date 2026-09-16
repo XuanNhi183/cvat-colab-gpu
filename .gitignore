@@ -1,0 +1,4 @@
+__pycache__/
+*.env
+*.log
+template_model_EoMT_Small.md
