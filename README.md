@@ -23,7 +23,7 @@ D:\cvat\
     ├── test_gateway.py
     ├── README.md
     ├── .gitignore
-    └── colab.env                 # Tạo khi chạy, không đưa lên GitHub
+    └── colab.env
 ```
 
 Các lệnh PowerShell dưới đây chạy từ `D:\cvat`. Đổi đường dẫn nếu bạn cài CVAT ở nơi khác.
