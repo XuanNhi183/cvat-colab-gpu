@@ -214,17 +214,6 @@ Giữ các override riêng khác nếu có. Các lệnh này không xóa dữ li
 | Không có mask | Kiểm tra threshold, ảnh thử, lớp checkpoint đã học và mapping nhãn task |
 | Cảnh báo orphan container `nuclio` | Nuclio cũ nằm ngoài danh sách compose hiện tại; riêng cảnh báo này không có nghĩa bridge lỗi |
 
-## Chia sẻ qua GitHub
-
-Có thể chia sẻ thư mục này gồm notebook, code, compose override và README.
-Người nhận đặt nó vào thư mục CVAT theo cấu trúc ở đầu tài liệu.
-
-- **Không commit `colab.env` hoặc token.** `.gitignore` đã bỏ qua `*.env` và `*.log`.
-- Xóa output notebook trước khi chia sẻ nếu đã in token trong Colab.
-- Không hardcode ngrok authtoken vào cell; dùng Secrets hoặc ô nhập ẩn.
-- `.gitignore` không bảo vệ file đã được Git theo dõi. Nếu token đã lộ, thay token; xóa file ở commit mới không xóa bí mật khỏi lịch sử Git.
-- Mỗi người tự chạy runtime và ngrok riêng, không dùng lại URL/token của người chia sẻ.
-- Phiên bản CVAT khác có thể cần điều chỉnh; không đảm bảo mọi phiên bản đều tương thích.
 
 ## Đổi repo/model
 
